@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace RazorPageMovieDataManager.Models
 {
@@ -14,9 +15,11 @@ namespace RazorPageMovieDataManager.Models
         public string Title { get; set; }
 
         //The[DataType] attribute specifies the type of the data(Date). With this attribute:
+        [Display(Name = "Release Date")]
         [DataType(DataType.Date)]
         public DateTime ReleaseDate { get; set; }
         public string Genre { get; set; }
+        [Column(TypeName = "decimal(18, 2)")]
         public decimal Price { get; set; }
     }
 }
